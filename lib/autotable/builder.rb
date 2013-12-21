@@ -107,7 +107,7 @@ module Autotable
         end
 
         action_class = @options[:action_class] + ' '
-        action_class << a[:class] || 'btn-default'
+        action_class << (a[:class] || 'btn-default')
 
         link_options = a.slice(:confirm, :method, :remote)
         link_options[:class] = action_class
