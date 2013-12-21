@@ -108,9 +108,11 @@ module Autotable
           url = '#'
         end
 
+        action_class = @options[:action_class] + ' '
+        action_class << a[:class] || 'btn-default'
+
         link_options = a.slice(:confirm, :method, :remote)
-        link_options[:class] ||= 'btn-default'
-        link_options[:class] << " #{@options[:action_class]}"
+        link_options[:class] = action_class
         
         @template.link_to(text.html_safe, url, link_options)
       }.join(' ')
