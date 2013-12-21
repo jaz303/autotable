@@ -1,5 +1,5 @@
 module Autotable
-  DEFAULT_OPTIONS = { action_class: "btn btn-small" }
+  DEFAULT_OPTIONS = { action_class: "btn btn-xs" }
 
   class Builder
     def initialize(collection, template, options)
@@ -109,11 +109,11 @@ module Autotable
         end
 
         link_options = a.slice(:confirm, :method, :remote)
-        link_options[:class] ||= ''
+        link_options[:class] ||= 'btn-default'
         link_options[:class] << " #{@options[:action_class]}"
         
         @template.link_to(text.html_safe, url, link_options)
-      }.join(' | ')
+      }.join(' ')
       
       html << "<td>#{actions}</td>"
       
