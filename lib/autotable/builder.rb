@@ -1,5 +1,5 @@
 module Autotable
-  DEFAULT_OPTIONS = { action_class: "btn btn-xs" }
+  DEFAULT_OPTIONS = { action_class: "btn btn-sm" }
 
   class Builder
     def initialize(collection, template, options)
