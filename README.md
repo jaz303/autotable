@@ -31,4 +31,26 @@ yields
 
 ## API
 
+### Helper Methods
 
+#### `autotable(collection, options = {}, &block)`
+
+Generate an HTML table for collection `collection`.
+
+Valid `options`:
+
+  - `action_class`: bass class name applied to action links. Default: `btn btn-sm`.
+  - `striped`: enable row-striping
+  - `bordered`: enable table border
+  - `hover`: enable row hover highlighting
+  - `condensed`: use condensed table layout
+
+Table column and action configuration is achieved by passing a block to `autotable` which, when called, receives an instance of `Autotable::Builder` as an argument. This is documented below.
+
+### Builder Methods
+
+#### `column(method, title = nil, &formatter)`
+
+#### `action(title, options = {})`
+
+#### `to_html`
