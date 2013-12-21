@@ -90,10 +90,8 @@ module Autotable
       actions = @actions.map { |a|
         text = a[:title]
         
-        if a[:icon].is_a?(Symbol)
-          text = "#{@template.icon(a[:icon])} #{text}"
-        elsif a[:action].is_a?(String)
-          text = "#{a[:icon]} #{text}"
+        if a[:icon]
+          text = "<span class='glyphicon glyphicon-#{a[:icon]}'></span> #{text}"
         end
         
         if a[:url].is_a?(String)
