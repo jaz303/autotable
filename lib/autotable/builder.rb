@@ -1,7 +1,10 @@
 module Autotable
+  DEFAULT_OPTIONS = { action_class: "btn btn-small" }
+
   class Builder
     def initialize(collection, template, options)
-      @collection, @template, @options = collection, template, options
+      @collection, @template = collection, template
+      @options = DEFAULT_OPTIONS.merge(options)
       @columns, @actions = [], []
     end
     
@@ -104,8 +107,12 @@ module Autotable
         else
           url = '#'
         end
+
+        link_options = a.slice(:confirm, :method, :remote)
+        link_options[:class] ||= ''
+        link_options[:class] << " #{@options[:action_class]}"
         
-        @template.link_to(text.html_safe, url, a.slice(:confirm, :method, :remote))
+        @template.link_to(text.html_safe, url, link_options)
       }.join(' | ')
       
       html << "<td>#{actions}</td>"
