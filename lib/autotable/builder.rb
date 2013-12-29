@@ -68,7 +68,7 @@ module Autotable
         html << "<th>#{h(c[:title])}</th>\n"
       end
       
-      html << "<th>Actions</th>\n"
+      html << "<th class='actions'>Actions</th>\n"
       html << "</tr>\n"
       html << "</thead>\n"
       html
@@ -115,7 +115,7 @@ module Autotable
         @template.link_to(text.html_safe, url, link_options)
       }.join(' ')
       
-      html << "<td>#{actions}</td>"
+      html << "<td class='actions'>#{actions}</td>"
       
       html << "</tr>\n"
     end
